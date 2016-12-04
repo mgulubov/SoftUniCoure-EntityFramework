@@ -14,10 +14,10 @@
         public int Id { get; set; }
 
         [Column("HomeTeamId")]
-        public int? HomeTeamId { get; set; }
+        public int HomeTeamId { get; set; }
 
         [Column("AwayTeamId")]
-        public int? AwayTeamId { get; set; }
+        public int AwayTeamId { get; set; }
 
         [Column("HomeTeamGoals")]
         [Range(minimum: 0, maximum: 99, ErrorMessage = "HomeTeamGoals cannot be less than 0 or > 99")]

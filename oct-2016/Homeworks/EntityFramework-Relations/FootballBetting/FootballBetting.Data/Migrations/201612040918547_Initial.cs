@@ -41,8 +41,8 @@ namespace FootballBetting.Data.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        HomeTeamId = c.Int(),
-                        AwayTeamId = c.Int(),
+                        HomeTeamId = c.Int(nullable: false),
+                        AwayTeamId = c.Int(nullable: false),
                         HomeTeamGoals = c.Int(nullable: false),
                         AwayTeamGoals = c.Int(nullable: false),
                         RoundId = c.Int(nullable: false),
@@ -54,8 +54,8 @@ namespace FootballBetting.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Teams", t => t.AwayTeamId)
-                .ForeignKey("dbo.Teams", t => t.HomeTeamId)
                 .ForeignKey("dbo.Competitions", t => t.CompetitionId, cascadeDelete: true)
+                .ForeignKey("dbo.Teams", t => t.HomeTeamId)
                 .ForeignKey("dbo.Rounds", t => t.RoundId, cascadeDelete: true)
                 .Index(t => t.HomeTeamId)
                 .Index(t => t.AwayTeamId)
@@ -71,11 +71,11 @@ namespace FootballBetting.Data.Migrations
                         Logo = c.Binary(),
                         Budget = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PrimaryKitColorId = c.Int(nullable: false),
-                        SecondaryKitColorId = c.Int(),
+                        SecondaryKitColorId = c.Int(nullable: false),
                         TownId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Colors", t => t.PrimaryKitColorId, cascadeDelete: true)
+                .ForeignKey("dbo.Colors", t => t.PrimaryKitColorId)
                 .ForeignKey("dbo.Colors", t => t.SecondaryKitColorId)
                 .ForeignKey("dbo.Towns", t => t.TownId, cascadeDelete: true)
                 .Index(t => t.PrimaryKitColorId)
@@ -211,9 +211,11 @@ namespace FootballBetting.Data.Migrations
             DropForeignKey("dbo.Bets", "UserId", "dbo.Users");
             DropForeignKey("dbo.BetsGames", "ResultPredictionId", "dbo.ResultPredictions");
             DropForeignKey("dbo.Games", "RoundId", "dbo.Rounds");
+            DropForeignKey("dbo.Games", "HomeTeamId", "dbo.Teams");
             DropForeignKey("dbo.Games", "CompetitionId", "dbo.Competitions");
             DropForeignKey("dbo.Competitions", "CompetitionTypeId", "dbo.CompetitionTypes");
             DropForeignKey("dbo.BetsGames", "GameId", "dbo.Games");
+            DropForeignKey("dbo.Games", "AwayTeamId", "dbo.Teams");
             DropForeignKey("dbo.Teams", "TownId", "dbo.Towns");
             DropForeignKey("dbo.Towns", "CountryId", "dbo.Countries");
             DropForeignKey("dbo.Countries", "Continent_Id", "dbo.Continent");
@@ -221,8 +223,6 @@ namespace FootballBetting.Data.Migrations
             DropForeignKey("dbo.Teams", "PrimaryKitColorId", "dbo.Colors");
             DropForeignKey("dbo.Players", "TeamId", "dbo.Teams");
             DropForeignKey("dbo.Players", "PositionId", "dbo.Positions");
-            DropForeignKey("dbo.Games", "HomeTeamId", "dbo.Teams");
-            DropForeignKey("dbo.Games", "AwayTeamId", "dbo.Teams");
             DropForeignKey("dbo.BetsGames", "BetId", "dbo.Bets");
             DropIndex("dbo.Users", new[] { "Username" });
             DropIndex("dbo.ResultPredictions", new[] { "Prediction" });

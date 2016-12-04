@@ -13,7 +13,7 @@ namespace FootballBetting.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201612032249065_Initial"; }
+            get { return "201612040918547_Initial"; }
         }
         
         string IMigrationMetadata.Source

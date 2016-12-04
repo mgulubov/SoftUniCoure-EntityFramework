@@ -40,5 +40,27 @@ namespace FootballBetting.Data.Contexts
         public virtual DbSet<Town> Towns { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Team>()
+                        .HasRequired<Color>(t => t.PrimaryKitColor)
+                        .WithMany(c => c.PrimaryKitTeams)
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Team>()
+                        .HasRequired<Color>(t => t.SecondaryKitColor)
+                        .WithMany(c => c.SecondaryKitTeams)
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Game>()
+                        .HasRequired<Team>(g => g.HomeTeam)
+                        .WithMany(t => t.HomeTeamGames)
+                        .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Game>()
+                        .HasRequired<Team>(g => g.AwayTeam)
+                        .WithMany(t => t.AwayTeamGames)
+                        .WillCascadeOnDelete(false);
+        }
     }
 }

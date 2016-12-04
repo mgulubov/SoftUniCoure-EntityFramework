@@ -33,7 +33,7 @@
         public int PrimaryKitColorId { get; set; }
 
         [Column("SecondaryKitColorId")]
-        public int? SecondaryKitColorId { get; set; }
+        public int SecondaryKitColorId { get; set; }
 
         [Column("TownId")]
         [Required]
