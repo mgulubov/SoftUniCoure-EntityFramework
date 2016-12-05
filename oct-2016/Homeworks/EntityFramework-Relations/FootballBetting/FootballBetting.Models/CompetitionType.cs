@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("CompetitionTypes")]
-    public class CompetitionType
+    public class CompetitionType : ICompetitionType
     {
         [Column("Id")]
         [Key]

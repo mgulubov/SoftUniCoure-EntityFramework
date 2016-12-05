@@ -3,8 +3,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Countries")]
-    public class Country
+    public class Country : ICountry
     {
         [Column("Id")]
         [Key]

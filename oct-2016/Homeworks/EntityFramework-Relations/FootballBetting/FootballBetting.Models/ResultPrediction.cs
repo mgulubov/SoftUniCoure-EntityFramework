@@ -4,10 +4,12 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     using Services.Enums;
 
     [Table("ResultPredictions")]
-    public class ResultPrediction
+    public class ResultPrediction : IResultPrediction
     {
         [Column("Id")]
         [Key]

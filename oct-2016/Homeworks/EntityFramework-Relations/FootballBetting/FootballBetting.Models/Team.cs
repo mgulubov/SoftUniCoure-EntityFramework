@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Teams")]
-    public class Team
+    public class Team : ITeam
     {
         [Column("Id")]
         [Key]
@@ -18,8 +20,9 @@
         public string Name { get; set; }
 
         [Column("Initials")]
+        [MaxLength(3)]
         [RegularExpression(@"^([A-Z]{3})$")]
-        public char[] Initials { get; set; }
+        public string Initials { get; set; }
 
         [Column("Logo")]
         [MaxLength(1000000, ErrorMessage = "Logo cannot be longer than 1000000 bytes.")]

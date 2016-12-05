@@ -3,8 +3,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Players")]
-    public class Player
+    public class Player : IPlayer
     {
         [Column("Id")]
         [Key]

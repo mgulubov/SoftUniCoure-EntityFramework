@@ -3,8 +3,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("BetsGames")]
-    public class BetGame
+    public class BetGame : IBetGame
     {
         [Column("GameId", Order = 0)]
         [Key]

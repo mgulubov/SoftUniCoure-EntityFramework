@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Colors")]
-    public class Color
+    public class Color : IColor
     {
         [Column("Id")]
         [Key]

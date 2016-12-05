@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Continent")]
-    public class Continent
+    public class Continent : IContinent
     {
         [Column("Id")]
         [Key]

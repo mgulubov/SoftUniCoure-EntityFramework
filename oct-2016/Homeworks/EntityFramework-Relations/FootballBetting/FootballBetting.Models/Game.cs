@@ -5,8 +5,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Games")]
-    public class Game
+    public class Game : IGame
     {
         [Column("Id")]
         [Key]

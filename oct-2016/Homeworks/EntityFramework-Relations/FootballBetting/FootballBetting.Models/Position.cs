@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using Services.Interfaces;
+
     [Table("Positions")]
-    public class Position
+    public class Position : IPosition
     {
         [Column("Id")]
         [Key]
