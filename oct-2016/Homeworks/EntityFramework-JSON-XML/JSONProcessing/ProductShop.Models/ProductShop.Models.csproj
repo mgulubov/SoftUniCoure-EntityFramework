@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B720AAF1-7524-4D26-8609-6FA1C638A4C1}</ProjectGuid>
+    <ProjectGuid>{A44EE603-4357-4CDF-B7AB-4FBBAAA6D251}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FootballBetting.Data</RootNamespace>
-    <AssemblyName>FootballBetting.Data</AssemblyName>
+    <RootNamespace>ProductShop.Models</RootNamespace>
+    <AssemblyName>ProductShop.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,8 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,38 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexts\FootballBettingContext.cs" />
-    <Compile Include="Migrations\201612040918547_Initial.cs">
-      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
-    </Compile>
-    <Compile Include="Migrations\201612040918547_Initial.Designer.cs">
-      <DependentUpon>201612040918547_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs">
-      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
-    </Compile>
+    <Compile Include="Category.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="UnitsOfWork\GenericUnitOfWork.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FootballBetting.Models\FootballBetting.Models.csproj">
-      <Project>{6feb6b23-795b-4d18-b005-75ed81c0183e}</Project>
-      <Name>FootballBetting.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FootballBetting.Services\FootballBetting.Services.csproj">
-      <Project>{52f05d09-5a74-49b5-b325-b2fb30b13fbe}</Project>
-      <Name>FootballBetting.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612040918547_Initial.resx">
-      <DependentUpon>201612040918547_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

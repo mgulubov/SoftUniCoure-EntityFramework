@@ -44,7 +44,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObjects\BetDto.cs" />
+    <Compile Include="DataTransferObjects\BetGameDto.cs" />
+    <Compile Include="DataTransferObjects\ColorDto.cs" />
+    <Compile Include="DataTransferObjects\CompetitionDto.cs" />
+    <Compile Include="DataTransferObjects\CompetitionTypeDto.cs" />
+    <Compile Include="DataTransferObjects\ContinentDto.cs" />
+    <Compile Include="DataTransferObjects\CountryDto.cs" />
+    <Compile Include="DataTransferObjects\GameDto.cs" />
+    <Compile Include="DataTransferObjects\PlayerDto.cs" />
+    <Compile Include="DataTransferObjects\PositionDto.cs" />
+    <Compile Include="DataTransferObjects\ResultPredictionDto.cs" />
+    <Compile Include="DataTransferObjects\RoundDto.cs" />
+    <Compile Include="DataTransferObjects\TeamDto.cs" />
+    <Compile Include="DataTransferObjects\TownDto.cs" />
+    <Compile Include="DataTransferObjects\UserDto.cs" />
     <Compile Include="Enums\ResultPreditionType.cs" />
+    <Compile Include="Interfaces\IBet.cs" />
+    <Compile Include="Interfaces\IBetGame.cs" />
+    <Compile Include="Interfaces\IColor.cs" />
+    <Compile Include="Interfaces\ICompetition.cs" />
+    <Compile Include="Interfaces\ICompetitionType.cs" />
+    <Compile Include="Interfaces\IContinent.cs" />
+    <Compile Include="Interfaces\ICountry.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="Interfaces\IIdentifiable.cs" />
+    <Compile Include="Interfaces\INameable.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\IPosition.cs" />
+    <Compile Include="Interfaces\IResultPrediction.cs" />
+    <Compile Include="Interfaces\IRound.cs" />
+    <Compile Include="Interfaces\ITeam.cs" />
+    <Compile Include="Interfaces\ITown.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
